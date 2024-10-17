@@ -22,6 +22,7 @@ Public Class Form1
             da.Fill(dt)
             'set the source to data grid view
             dataRecord.DataSource = dt
+            dataRecord.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             conn.Close()
         Catch manye As Exception
             MsgBox(manye.Message)
@@ -29,4 +30,8 @@ Public Class Form1
 
     End Sub
 
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        Form2.Show()
+        Me.Hide()
+    End Sub
 End Class
